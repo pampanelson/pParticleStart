@@ -3,11 +3,13 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
 	ofSetBackgroundAuto(false);
+
 	ofBackgroundGradient(ofColor(60, 60, 60), ofColor(10, 10, 10));
+	ofEnableAlphaBlending();
 
 	ofSetFrameRate(30);
 
-	int numParticles = 5000;
+	int numParticles = 1000;
 	for (int i = 0; i < numParticles; i++) {
 		Particle newParticle;
 		newParticle.reset();
@@ -24,9 +26,9 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-	if(int(ofGetElapsedTimef()) % 120 == 0){
-		ofColor(0,0,0);
-	}
+	ofSetColor(0,0,0,50);
+	ofDrawRectangle(0,0,ofGetWidth(),ofGetHeight());
+	ofSetColor(255,255,255,255);
 	for (int i = 0; i < particles.size(); i++) {
 		particles[i].draw();
 	}

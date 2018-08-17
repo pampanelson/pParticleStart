@@ -71,9 +71,11 @@ void Particle::update() {
 
 void Particle::draw() {
 	if (isAttracting) {
-		ofSetColor(252, 225, ofRandom(250));
-	} else {
 		ofSetColor(214, 251, 252);
+
+	} else {
+		ofSetColor(252, 225, ofRandom(250));
+
 	}
 
 	ofDrawCircle(position.x, position.y, ofRandom(1.0,2.0));
